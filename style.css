@@ -77,3 +77,49 @@ textarea {
     margin: 10px auto;
     gap: 75px;
 }
+
+
+/* Mobile Verison */
+/* ...existing code... */
+
+@media (max-width: 800px) {
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+    .output {
+        gap: 30px;
+        font-size: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        flex-direction: row;
+        padding: 10px 8px 10px 8px;
+    }
+    .navbar a {
+        font-size: 14px;
+        padding: 10px 8px;
+        margin: 2px 0;
+        width: 100%;
+        text-align: center;
+    }
+    h1 {
+        font-size: 22px;
+    }
+
+    textarea {
+        font-size: 14px;
+        height: 100px;
+        padding: 8px;
+    }
+
+    .output {
+        font-size: 14px;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
