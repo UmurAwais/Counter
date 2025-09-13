@@ -1,43 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: #2b2b2b;  
 }
 
 body {
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #fdfdfd, #f5f7fa); /* light subtle gradient */
+    min-height: 100vh;  
 }
 
 /* Header */
 .navbar{
-    background-color: #0059db;
-    overflow: hidden;
+    background: #0059db;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 20px 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 8px;
+    gap: 10px;
+    transition: all 0.3s ease;
 }
 
 .navbar a {
     color: white;
-    padding: 14px 16px;
+    font-weight: 500;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
+    padding: 10px 18px;
     border-radius: 8px;
-    margin: 0 3px;
+    transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: white;
-    color: black;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }
 
 .navbar a.active {
-    background-color: #2b2b2b;
+    background: rgba(0, 0, 0, 0.15);
     color: white;
     border-radius: 8px;
 }
@@ -45,27 +49,48 @@ body {
 
 /* Body */
 .container {
-    max-width: 700px;
     margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
     text-align: center;
-    color: #2b2b2b;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #111;
 }
 
 textarea {
     width: 100%;
-    height: 150px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    resize: vertical;
+    min-height: 200px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 15px;
     font-size: 16px;
+    color: #2b2b2b;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.4);
 }
 
 .output {
@@ -75,20 +100,24 @@ textarea {
     justify-content: center;
     align-items: center;
     margin: 10px auto;
-    gap: 65px;
+    gap: 85px;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-/* Mobile Verison */
-/* ...existing code... */
+/* Mobile Version */
 
 @media (max-width: 800px) {
     .container {
-        max-width: 95%;
+        margin-top: 25px;
+        max-width: 100%;
         padding: 10px;
     }
     .output {
-        gap: 30px;
         font-size: 16px;
         flex-direction: column;
         align-items: flex-start;
@@ -99,6 +128,7 @@ textarea {
     .navbar {
         flex-direction: row;
         padding: 10px 8px 10px 8px;
+        gap: 0px;
     }
     .navbar a {
         font-size: 14px;
@@ -107,6 +137,7 @@ textarea {
         width: 100%;
         text-align: center;
     }
+    
     h1 {
         font-size: 22px;
     }
